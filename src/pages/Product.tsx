@@ -91,42 +91,54 @@ const Product = () => {
   return (
     <div className="min-h-screen bg-gravity-dark text-white">
       {/* Header */}
-      <header className="relative z-50 w-full border-b border-gravity-border/30">
+      <header className="relative z-50 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <GravityLogo size="medium" />
-            <nav className="hidden lg:flex items-center space-x-8">
+          <div className="flex items-center justify-between h-22 py-6">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <a href="/">
+                <GravityLogo size="medium" />
+              </a>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-12">
               <a
                 href="/"
-                className="text-white hover:text-gravity-gray transition-colors"
+                className="text-white text-sm font-normal tracking-[0.53px] uppercase hover:text-gravity-gray transition-colors"
               >
                 Home
               </a>
               <a
                 href="#"
-                className="text-white hover:text-gravity-gray transition-colors"
+                className="text-white text-sm font-normal tracking-[0.53px] uppercase hover:text-gravity-gray transition-colors"
+              >
+                About Us
+              </a>
+              <div className="relative group">
+                <button className="text-white text-sm font-normal tracking-[0.53px] uppercase hover:text-gravity-gray transition-colors">
+                  Our Services
+                </button>
+              </div>
+              <a
+                href="/product"
+                className="text-gravity-blue text-sm font-normal tracking-[0.53px] uppercase"
               >
                 Products
               </a>
               <a
                 href="#"
-                className="text-white hover:text-gravity-gray transition-colors"
+                className="text-white text-sm font-normal tracking-[0.53px] uppercase hover:text-gravity-gray transition-colors"
               >
-                Solutions
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-gravity-gray transition-colors"
-              >
-                Support
+                Work with Us
               </a>
             </nav>
-            <div className="flex items-center space-x-4">
-              <button className="p-2 hover:bg-gravity-border/20 rounded-full transition-colors">
-                <Heart className="w-5 h-5" />
-              </button>
-              <button className="p-2 hover:bg-gravity-border/20 rounded-full transition-colors">
-                <Share2 className="w-5 h-5" />
+
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex items-center">
+              <button className="flex items-center px-7 py-1 text-white text-sm font-normal tracking-[0.53px] uppercase hover:opacity-90 transition-opacity">
+                <div className="w-4 h-4 rounded-full bg-gravity-gradient mr-2"></div>
+                Get In Touch
               </button>
             </div>
           </div>
