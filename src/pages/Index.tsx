@@ -67,10 +67,13 @@ const Index = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center">
-              <button className="flex items-center px-7 py-1 text-white text-sm font-normal tracking-[0.53px] uppercase hover:opacity-90 transition-opacity">
+              <a
+                href="/contact"
+                className="flex items-center px-7 py-1 text-white text-sm font-normal tracking-[0.53px] uppercase hover:opacity-90 transition-opacity"
+              >
                 <div className="w-4 h-4 rounded-full bg-gravity-gradient mr-2"></div>
                 Get In Touch
-              </button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -123,10 +126,13 @@ const Index = () => {
               >
                 Blog
               </a>
-              <button className="flex items-center mt-4 px-7 py-3 text-white text-sm font-normal tracking-[0.53px] uppercase bg-gravity-gradient rounded-sm hover:opacity-90 transition-opacity">
+              <a
+                href="/contact"
+                className="flex items-center mt-4 px-7 py-3 text-white text-sm font-normal tracking-[0.53px] uppercase bg-gravity-gradient rounded-sm hover:opacity-90 transition-opacity"
+              >
                 <div className="w-3 h-3 rounded-full bg-white/30 mr-2"></div>
                 Get In Touch
-              </button>
+              </a>
             </div>
           </div>
         )}
