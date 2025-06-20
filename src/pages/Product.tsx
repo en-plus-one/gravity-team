@@ -76,6 +76,9 @@ const Product = () => {
     starlight: { name: "Starlight Silver", hex: "#F5F5DC" },
     blue: { name: "Deep Blue", hex: "#1E3A8A" },
     purple: { name: "Cosmic Purple", hex: "#7C3AED" },
+    sunflower: { name: "Sunflower Yellow", hex: "#FFDA03" },
+    zombie: { name: "Zombie Green", hex: "#54C571" },
+    fire: { name: "Fire Engine Red", hex: "#CE2029" },
   };
 
   const nextImage = () => {
