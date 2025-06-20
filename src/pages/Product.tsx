@@ -72,13 +72,13 @@ const Product = () => {
   };
 
   const colors = {
-    midnight: { name: "Midnight Black", hex: "#000000" },
-    starlight: { name: "Starlight Silver", hex: "#F5F5DC" },
-    blue: { name: "Deep Blue", hex: "#1E3A8A" },
-    purple: { name: "Cosmic Purple", hex: "#7C3AED" },
+    fire: { name: "Fire Engine Red", hex: "#CE2029" },
     sunflower: { name: "Sunflower Yellow", hex: "#FFDA03" },
     zombie: { name: "Zombie Green", hex: "#54C571" },
-    fire: { name: "Fire Engine Red", hex: "#CE2029" },
+    blue: { name: "Deep Blue", hex: "#1E3A8A" },
+    purple: { name: "Cosmic Purple", hex: "#7C3AED" },
+    midnight: { name: "Midnight Black", hex: "#000000" },
+    starlight: { name: "Starlight Silver", hex: "#F5F5DC" },
   };
 
   const nextImage = () => {
