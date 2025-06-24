@@ -301,11 +301,16 @@ const Product = () => {
             <div className="lg:col-span-2 space-y-8">
               {/* Rating and Reviews */}
               <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-1">
+                <div
+                  className="flex items-center space-x-1"
+                  role="img"
+                  aria-label="4.9 out of 5 stars"
+                >
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
                       className="w-5 h-5 fill-gravity-gold text-gravity-gold"
+                      aria-hidden="true"
                     />
                   ))}
                 </div>
