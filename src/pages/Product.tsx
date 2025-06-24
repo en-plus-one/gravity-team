@@ -264,7 +264,11 @@ const Product = () => {
               </div>
 
               {/* Thumbnail Images */}
-              <div className="grid grid-cols-4 gap-4">
+              <div
+                className="grid grid-cols-4 gap-4"
+                role="tablist"
+                aria-label="Product image gallery"
+              >
                 {productImages.map((img, index) => (
                   <button
                     key={index}
@@ -275,6 +279,9 @@ const Product = () => {
                         ? "border-gravity-blue shadow-lg shadow-gravity-blue/20"
                         : "border-gravity-border/30 hover:border-gravity-border/60",
                     )}
+                    role="tab"
+                    aria-selected={currentImageIndex === index}
+                    aria-label={`View image ${index + 1} of ${productImages.length}`}
                   >
                     <img
                       src={img}
