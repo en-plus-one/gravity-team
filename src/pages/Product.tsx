@@ -467,17 +467,25 @@ const Product = () => {
               {/* Key Features */}
               <Card className="bg-gravity-dark/50 border-gravity-border/30">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-lg text-white">
+                  <CardTitle
+                    className="text-lg text-white"
+                    id="features-heading"
+                  >
                     Key Features
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  {currentVariant.features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <Check className="w-5 h-5 text-gravity-blue flex-shrink-0" />
-                      <span className="text-gravity-gray">{feature}</span>
-                    </div>
-                  ))}
+                <CardContent>
+                  <ul className="space-y-3" aria-labelledby="features-heading">
+                    {currentVariant.features.map((feature, index) => (
+                      <li key={index} className="flex items-center space-x-3">
+                        <Check
+                          className="w-5 h-5 text-gravity-blue flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                        <span className="text-gravity-gray">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
 
