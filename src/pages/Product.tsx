@@ -413,9 +413,15 @@ const Product = () => {
               </fieldset>
 
               {/* Color Selection */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Choose Your Color</h3>
-                <div className="flex space-x-4">
+              <fieldset className="space-y-4">
+                <legend className="text-lg font-semibold">
+                  Choose Your Color
+                </legend>
+                <div
+                  className="flex space-x-4"
+                  role="radiogroup"
+                  aria-labelledby="color-selection"
+                >
                   {Object.entries(colors).map(([key, color]) => (
                     <div
                       key={key}
@@ -430,18 +436,33 @@ const Product = () => {
                             : "border-gray-300 hover:border-gravity-border",
                         )}
                         style={{ backgroundColor: color.hex }}
+                        role="radio"
+                        aria-checked={selectedColor === key}
+                        aria-label={color.name}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            setSelectedColor(key);
+                          }
+                        }}
                       >
                         {selectedColor === key && (
-                          <div className="absolute inset-0 rounded-full border-2 border-gravity-blue animate-pulse" />
+                          <div
+                            className="absolute inset-0 rounded-full border-2 border-gravity-blue animate-pulse"
+                            aria-hidden="true"
+                          />
                         )}
                       </button>
-                      <span className="text-xs text-gravity-gray text-center leading-tight">
+                      <span
+                        className="text-xs text-gravity-gray text-center leading-tight"
+                        aria-hidden="true"
+                      >
                         {color.name}
                       </span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </fieldset>
 
               {/* Key Features */}
               <Card className="bg-gravity-dark/50 border-gravity-border/30">
