@@ -508,25 +508,47 @@ const Product = () => {
                 </Button>
 
                 {/* Trust Signals */}
-                <div className="grid grid-cols-3 gap-4 pt-4 text-center">
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center">
+                <div
+                  className="grid grid-cols-3 gap-4 pt-4 text-center"
+                  role="list"
+                  aria-label="Product guarantees"
+                >
+                  <div
+                    className="flex flex-col items-center space-y-2"
+                    role="listitem"
+                  >
+                    <div
+                      className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center"
+                      aria-hidden="true"
+                    >
                       <Truck className="w-4 h-4 text-gravity-blue" />
                     </div>
                     <span className="text-xs text-gravity-gray">
                       Free Shipping
                     </span>
                   </div>
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center">
+                  <div
+                    className="flex flex-col items-center space-y-2"
+                    role="listitem"
+                  >
+                    <div
+                      className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center"
+                      aria-hidden="true"
+                    >
                       <RotateCcw className="w-4 h-4 text-gravity-blue" />
                     </div>
                     <span className="text-xs text-gravity-gray">
                       30-Day Returns
                     </span>
                   </div>
-                  <div className="flex flex-col items-center space-y-2">
-                    <div className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center">
+                  <div
+                    className="flex flex-col items-center space-y-2"
+                    role="listitem"
+                  >
+                    <div
+                      className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center"
+                      aria-hidden="true"
+                    >
                       <Shield className="w-4 h-4 text-gravity-blue" />
                     </div>
                     <span className="text-xs text-gravity-gray">
