@@ -192,10 +192,7 @@ const Product = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
           {/* Breadcrumb */}
-          <nav
-            aria-label="Breadcrumb"
-            className="flex items-center space-x-2 text-sm text-gravity-gray mb-8"
-          >
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-sm text-gravity-gray mb-8">
             <a href="/" className="hover:text-white transition-colors">
               Home
             </a>
@@ -204,9 +201,7 @@ const Product = () => {
               Products
             </a>
             <span aria-hidden="true">/</span>
-            <span className="text-white" aria-current="page">
-              {currentVariant.name}
-            </span>
+            <span className="text-white" aria-current="page">{currentVariant.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
@@ -250,9 +245,7 @@ const Product = () => {
                 <button
                   onClick={() => setIsWishlisted(!isWishlisted)}
                   className="absolute top-4 right-4 w-10 h-10 bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
-                  aria-label={
-                    isWishlisted ? "Remove from wishlist" : "Add to wishlist"
-                  }
+                  aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
                   aria-pressed={isWishlisted}
                 >
                   <Heart
@@ -265,11 +258,7 @@ const Product = () => {
               </div>
 
               {/* Thumbnail Images */}
-              <div
-                className="grid grid-cols-4 gap-4"
-                role="tablist"
-                aria-label="Product image gallery"
-              >
+              <div className="grid grid-cols-4 gap-4" role="tablist" aria-label="Product image gallery">
                 {productImages.map((img, index) => (
                   <button
                     key={index}
@@ -302,11 +291,7 @@ const Product = () => {
             <div className="lg:col-span-2 space-y-8">
               {/* Rating and Reviews */}
               <div className="flex items-center space-x-4">
-                <div
-                  className="flex items-center space-x-1"
-                  role="img"
-                  aria-label="4.9 out of 5 stars"
-                >
+                <div className="flex items-center space-x-1" role="img" aria-label="4.9 out of 5 stars">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
@@ -320,11 +305,7 @@ const Product = () => {
 
               {/* Product Title and Price */}
               <div className="space-y-4">
-                <div
-                  className="flex items-center space-x-3"
-                  role="group"
-                  aria-label="Product highlights"
-                >
+                <div className="flex items-center space-x-3" role="group" aria-label="Product highlights">
                   <Badge
                     variant="secondary"
                     className="bg-gravity-blue/10 text-gravity-blue border-gravity-blue/20"
@@ -341,39 +322,22 @@ const Product = () => {
                   </Badge>
                 </div>
 
-                <h1
-                  className="text-3xl lg:text-4xl font-bold leading-tight"
-                  id="product-title"
-                >
+                <h1 className="text-3xl lg:text-4xl font-bold leading-tight" id="product-title">
                   {currentVariant.name}
                 </h1>
 
-                <div
-                  className="flex items-baseline space-x-3"
-                  role="group"
-                  aria-labelledby="product-title"
-                  aria-label="Product pricing"
-                >
-                  <span
-                    className="text-3xl font-bold text-gravity-blue"
-                    aria-label={`Current price: ${currentVariant.price}`}
-                  >
+                <div className="flex items-baseline space-x-3" role="group" aria-labelledby="product-title" aria-label="Product pricing">
+                  <span className="text-3xl font-bold text-gravity-blue" aria-label={`Current price: ${currentVariant.price}`}>
                     {currentVariant.price}
                   </span>
                   {currentVariant.originalPrice && (
-                    <span
-                      className="text-xl text-gravity-gray line-through"
-                      aria-label={`Original price was: ${currentVariant.originalPrice}`}
-                    >
+                    <span className="text-xl text-gravity-gray line-through" aria-label={`Original price was: ${currentVariant.originalPrice}`}>
                       {currentVariant.originalPrice}
                     </span>
                   )}
                 </div>
 
-                <p
-                  className="text-gravity-gray text-lg leading-relaxed"
-                  id="product-description"
-                >
+                <p className="text-gravity-gray text-lg leading-relaxed" id="product-description">
                   {currentVariant.description}. Experience the future of mobile
                   technology with cutting-edge performance and stunning design.
                 </p>
@@ -381,14 +345,8 @@ const Product = () => {
 
               {/* Model Selection */}
               <fieldset className="space-y-4">
-                <legend className="text-lg font-semibold">
-                  Choose Your Model
-                </legend>
-                <div
-                  className="space-y-3"
-                  role="radiogroup"
-                  aria-labelledby="model-selection"
-                >
+                <legend className="text-lg font-semibold">Choose Your Model</legend>
+                <div className="space-y-3" role="radiogroup" aria-labelledby="model-selection">
                   {Object.entries(variants).map(([key, variant]) => (
                     <Card
                       key={key}
@@ -403,7 +361,7 @@ const Product = () => {
                       aria-checked={selectedVariant === key}
                       tabIndex={0}
                       onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
+                        if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault();
                           setSelectedVariant(key);
                         }
@@ -438,14 +396,8 @@ const Product = () => {
 
               {/* Color Selection */}
               <fieldset className="space-y-4">
-                <legend className="text-lg font-semibold">
-                  Choose Your Color
-                </legend>
-                <div
-                  className="flex space-x-4"
-                  role="radiogroup"
-                  aria-labelledby="color-selection"
-                >
+                <legend className="text-lg font-semibold">Choose Your Color</legend>
+                <div className="flex space-x-4" role="radiogroup" aria-labelledby="color-selection">
                   {Object.entries(colors).map(([key, color]) => (
                     <div
                       key={key}
@@ -464,23 +416,17 @@ const Product = () => {
                         aria-checked={selectedColor === key}
                         aria-label={color.name}
                         onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") {
+                          if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
                             setSelectedColor(key);
                           }
                         }}
                       >
                         {selectedColor === key && (
-                          <div
-                            className="absolute inset-0 rounded-full border-2 border-gravity-blue animate-pulse"
-                            aria-hidden="true"
-                          />
+                          <div className="absolute inset-0 rounded-full border-2 border-gravity-blue animate-pulse" aria-hidden="true" />
                         )}
                       </button>
-                      <span
-                        className="text-xs text-gravity-gray text-center leading-tight"
-                        aria-hidden="true"
-                      >
+                      <span className="text-xs text-gravity-gray text-center leading-tight" aria-hidden="true">
                         {color.name}
                       </span>
                     </div>
@@ -491,10 +437,7 @@ const Product = () => {
               {/* Key Features */}
               <Card className="bg-gravity-dark/50 border-gravity-border/30">
                 <CardHeader className="pb-3">
-                  <CardTitle
-                    className="text-lg text-white"
-                    id="features-heading"
-                  >
+                  <CardTitle className="text-lg text-white" id="features-heading">
                     Key Features
                   </CardTitle>
                 </CardHeader>
@@ -502,10 +445,7 @@ const Product = () => {
                   <ul className="space-y-3" aria-labelledby="features-heading">
                     {currentVariant.features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-3">
-                        <Check
-                          className="w-5 h-5 text-gravity-blue flex-shrink-0"
-                          aria-hidden="true"
-                        />
+                        <Check className="w-5 h-5 text-gravity-blue flex-shrink-0" aria-hidden="true" />
                         <span className="text-gravity-gray">{feature}</span>
                       </li>
                     ))}
@@ -532,47 +472,25 @@ const Product = () => {
                 </Button>
 
                 {/* Trust Signals */}
-                <div
-                  className="grid grid-cols-3 gap-4 pt-4 text-center"
-                  role="list"
-                  aria-label="Product guarantees"
-                >
-                  <div
-                    className="flex flex-col items-center space-y-2"
-                    role="listitem"
-                  >
-                    <div
-                      className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center"
-                      aria-hidden="true"
-                    >
+                <div className="grid grid-cols-3 gap-4 pt-4 text-center" role="list" aria-label="Product guarantees">
+                  <div className="flex flex-col items-center space-y-2" role="listitem">
+                    <div className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center" aria-hidden="true">
                       <Truck className="w-4 h-4 text-gravity-blue" />
                     </div>
                     <span className="text-xs text-gravity-gray">
                       Free Shipping
                     </span>
                   </div>
-                  <div
-                    className="flex flex-col items-center space-y-2"
-                    role="listitem"
-                  >
-                    <div
-                      className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center"
-                      aria-hidden="true"
-                    >
+                  <div className="flex flex-col items-center space-y-2" role="listitem">
+                    <div className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center" aria-hidden="true">
                       <RotateCcw className="w-4 h-4 text-gravity-blue" />
                     </div>
                     <span className="text-xs text-gravity-gray">
                       30-Day Returns
                     </span>
                   </div>
-                  <div
-                    className="flex flex-col items-center space-y-2"
-                    role="listitem"
-                  >
-                    <div
-                      className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center"
-                      aria-hidden="true"
-                    >
+                  <div className="flex flex-col items-center space-y-2" role="listitem">
+                    <div className="w-8 h-8 bg-gravity-blue/20 rounded-full flex items-center justify-center" aria-hidden="true">
                       <Shield className="w-4 h-4 text-gravity-blue" />
                     </div>
                     <span className="text-xs text-gravity-gray">
@@ -708,41 +626,57 @@ const Product = () => {
                   "Powerful tablet for creativity and productivity with M2 chip",
               },
             ].map((product, index) => (
-              <Card
-                key={index}
-                className="group cursor-pointer bg-gravity-dark/50 border-gravity-border/30 hover:border-gravity-border/60 transition-all hover:shadow-lg hover:shadow-gravity-blue/10"
-              >
-                <div className="aspect-[4/3] bg-gradient-to-br from-gravity-purple/20 to-gravity-blue/20 rounded-t-lg overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        "https://via.placeholder.com/400x300/333/fff?text=" +
-                        encodeURIComponent(product.name);
-                    }}
-                  />
-                </div>
-                <CardContent className="p-6 space-y-3">
-                  <h3 className="font-semibold text-white group-hover:text-gravity-blue transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="text-gravity-gray text-sm leading-relaxed">
-                    {product.description}
-                  </p>
-                  <div className="flex items-center space-x-2">
-                    <span className="font-semibold text-gravity-blue">
-                      {product.price}
-                    </span>
-                    {product.originalPrice && (
-                      <span className="text-sm text-gravity-gray line-through">
-                        {product.originalPrice}
-                      </span>
-                    )}
+              <article key={index}>
+                <Card
+                  className="group bg-gravity-dark/50 border-gravity-border/30 hover:border-gravity-border/60 transition-all hover:shadow-lg hover:shadow-gravity-blue/10"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`View ${product.name} - ${product.price}`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      // Add navigation logic here when routes are available
+                      console.log(`Navigate to ${product.name}`);
+                    }
+                  }}
+                  onClick={() => {
+                    // Add navigation logic here when routes are available
+                    console.log(`Navigate to ${product.name}`);
+                  }}
+                >
+                  <div className="aspect-[4/3] bg-gradient-to-br from-gravity-purple/20 to-gravity-blue/20 rounded-t-lg overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={`${product.name} - ${product.description}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        e.currentTarget.src =
+                          "https://via.placeholder.com/400x300/333/fff?text=" +
+                          encodeURIComponent(product.name);
+                      }}
+                    />
                   </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6 space-y-3">
+                    <h3 className="font-semibold text-white group-hover:text-gravity-blue transition-colors" id={`product-${index}-title`}>
+                      {product.name}
+                    </h3>
+                    <p className="text-gravity-gray text-sm leading-relaxed" id={`product-${index}-description`}>
+                      {product.description}
+                    </p>
+                    <div className="flex items-center space-x-2" role="group" aria-labelledby={`product-${index}-title`} aria-label="Product pricing">
+                      <span className="font-semibold text-gravity-blue" aria-label={`Current price: ${product.price}`}>
+                        {product.price}
+                      </span>
+                      {product.originalPrice && (
+                        <span className="text-sm text-gravity-gray line-through" aria-label={`Original price was: ${product.originalPrice}`}>
+                          {product.originalPrice}
+                        </span>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </article>
+            ))
             ))}
           </div>
         </div>
