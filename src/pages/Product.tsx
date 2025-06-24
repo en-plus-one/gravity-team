@@ -162,6 +162,7 @@ const Product = () => {
                 variant="ghost"
                 size="icon"
                 className="text-gravity-gray hover:text-white"
+                aria-label="Add to wishlist"
               >
                 <Heart className="w-5 h-5" />
               </Button>
@@ -169,6 +170,7 @@ const Product = () => {
                 variant="ghost"
                 size="icon"
                 className="text-gravity-gray hover:text-white"
+                aria-label="Share product"
               >
                 <Share2 className="w-5 h-5" />
               </Button>
