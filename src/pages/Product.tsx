@@ -249,6 +249,10 @@ const Product = () => {
                 <button
                   onClick={() => setIsWishlisted(!isWishlisted)}
                   className="absolute top-4 right-4 w-10 h-10 bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                  aria-label={
+                    isWishlisted ? "Remove from wishlist" : "Add to wishlist"
+                  }
+                  aria-pressed={isWishlisted}
                 >
                   <Heart
                     className={cn(
