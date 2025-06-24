@@ -216,8 +216,9 @@ const Product = () => {
               <div className="relative aspect-[3/2] bg-gradient-to-br from-gravity-purple/10 to-gravity-blue/10 rounded-2xl overflow-hidden group">
                 <img
                   src={productImages[currentImageIndex]}
-                  alt={`${currentVariant.name} - View ${currentImageIndex + 1}`}
+                  alt={`${currentVariant.name} in ${colors[selectedColor as keyof typeof colors].name} color - Product image ${currentImageIndex + 1} of ${productImages.length}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  role="img"
                   onError={(e) => {
                     e.currentTarget.src =
                       "https://via.placeholder.com/1200x800/333/fff?text=Gravity+Phone";
