@@ -356,9 +356,15 @@ const Product = () => {
               </div>
 
               {/* Model Selection */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Choose Your Model</h3>
-                <div className="space-y-3">
+              <fieldset className="space-y-4">
+                <legend className="text-lg font-semibold">
+                  Choose Your Model
+                </legend>
+                <div
+                  className="space-y-3"
+                  role="radiogroup"
+                  aria-labelledby="model-selection"
+                >
                   {Object.entries(variants).map(([key, variant]) => (
                     <Card
                       key={key}
@@ -369,6 +375,15 @@ const Product = () => {
                           : "border-gravity-border/30 bg-gravity-dark/50 hover:border-gravity-border/60",
                       )}
                       onClick={() => setSelectedVariant(key)}
+                      role="radio"
+                      aria-checked={selectedVariant === key}
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setSelectedVariant(key);
+                        }
+                      }}
                     >
                       <CardContent className="p-4">
                         <div className="flex items-center justify-between">
@@ -395,7 +410,7 @@ const Product = () => {
                     </Card>
                   ))}
                 </div>
-              </div>
+              </fieldset>
 
               {/* Color Selection */}
               <div className="space-y-4">
