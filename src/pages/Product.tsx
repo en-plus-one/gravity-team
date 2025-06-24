@@ -192,16 +192,21 @@ const Product = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
           {/* Breadcrumb */}
-          <nav className="flex items-center space-x-2 text-sm text-gravity-gray mb-8">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center space-x-2 text-sm text-gravity-gray mb-8"
+          >
             <a href="/" className="hover:text-white transition-colors">
               Home
             </a>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <a href="/products" className="hover:text-white transition-colors">
               Products
             </a>
-            <span>/</span>
-            <span className="text-white">{currentVariant.name}</span>
+            <span aria-hidden="true">/</span>
+            <span className="text-white" aria-current="page">
+              {currentVariant.name}
+            </span>
           </nav>
 
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
