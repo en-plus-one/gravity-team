@@ -319,37 +319,60 @@ const Product = () => {
 
               {/* Product Title and Price */}
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
+                <div
+                  className="flex items-center space-x-3"
+                  role="group"
+                  aria-label="Product highlights"
+                >
                   <Badge
                     variant="secondary"
                     className="bg-gravity-blue/10 text-gravity-blue border-gravity-blue/20"
+                    aria-label={`Discount: ${currentVariant.savings}`}
                   >
                     {currentVariant.savings}
                   </Badge>
                   <Badge
                     variant="outline"
                     className="border-gravity-border/30 text-gravity-gray"
+                    aria-label={`Storage capacity: ${currentVariant.storage}`}
                   >
                     {currentVariant.storage}
                   </Badge>
                 </div>
 
-                <h1 className="text-3xl lg:text-4xl font-bold leading-tight">
+                <h1
+                  className="text-3xl lg:text-4xl font-bold leading-tight"
+                  id="product-title"
+                >
                   {currentVariant.name}
                 </h1>
 
-                <div className="flex items-baseline space-x-3">
-                  <span className="text-3xl font-bold text-gravity-blue">
+                <div
+                  className="flex items-baseline space-x-3"
+                  role="group"
+                  aria-labelledby="product-title"
+                  aria-label="Product pricing"
+                >
+                  <span
+                    className="text-3xl font-bold text-gravity-blue"
+                    aria-label={`Current price: ${currentVariant.price}`}
+                  >
                     {currentVariant.price}
                   </span>
                   {currentVariant.originalPrice && (
-                    <span className="text-xl text-gravity-gray line-through">
+                    <span
+                      className="text-xl text-gravity-gray line-through"
+                      aria-label={`Original price was: ${currentVariant.originalPrice}`}
+                    >
                       {currentVariant.originalPrice}
                     </span>
                   )}
                 </div>
 
-                <p className="text-gravity-gray text-lg leading-relaxed">
+                <p
+                  className="text-gravity-gray text-lg leading-relaxed"
+                  id="product-description"
+                >
                   {currentVariant.description}. Experience the future of mobile
                   technology with cutting-edge performance and stunning design.
                 </p>
